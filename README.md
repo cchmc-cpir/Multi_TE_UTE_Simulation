@@ -5,13 +5,13 @@ This repository contains MATLAB code for simulating multi-TE lung T2* decay usin
 
 #### Simulation Workflow:
 
-1. **Phantom Generation**: Modified 3D Shepp-Logan phantoms with isotropic matrix sizes of 64x64x64, 96x96x96, and 128x128x128 were created. The signal intensity pattern of the phantom resembles SNR patterns observed from murine lungs in vivo.
+1. **Phantom Generation**: Modified 3D Shepp-Logan phantoms with isotropic matrix sizes of 64x64x64, 96x96x96, or 128x128x128 is created. The signal intensity pattern of the phantom resembles SNR patterns observed from murine lungs in vivo.
 
 2. **T2* Relaxation Modeling**: T2* relaxation was incorporated into the signal decay during both the nominal echo time and the radial readout. Lung parenchyma was assigned a T2* value of 0.40 ms, and vasculature was assigned a T2* value of 3.16 ms.
 
 3. **Signal Decay Equation**: The image signal was varied at the voxel level using the signal decay equation:
 
-    ![Signal Decay Equation](https://latex.codecogs.com/svg.latex?S_%7Bk%2Ci%7D%3DS_0%20e%5E%7B-%28TE_%7Bk%7D&plus;%28i-1%29t_d%29/T_2%2A%7D)
+    S(k,i) = So * exp(-(TE(k)+(i-1)td)/T2*
 
     where:
     - \(S_{k,i}\) is the signal at voxel \(i\) and echo time \(k\).
